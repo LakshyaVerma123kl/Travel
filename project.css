@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+nav {
+  background-color: rgb(94, 93, 93);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.buttons button {
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: rgb(94, 93, 93);
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: rgb(200, 200, 200);
+  color: rgb(0, 0, 0);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-color: white;
+  flex-grow: 1;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+#search-bar {
+  border: none;
+  padding: 0.5rem 1rem;
+  flex-grow: 2;
+  font-size: 1rem;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.search-button,
+.clear-button {
+  border: none;
+  background-color: rgb(94, 93, 93);
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.search-button:hover,
+.clear-button:hover {
+  background-color: rgb(75, 75, 75);
+}
+
+.search-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .search-container {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #search-bar {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .buttons button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-button,
+  .clear-button {
+    width: 100%;
+  }
+
+  .search-icon {
+    display: none;
+  }
+}
+
+.main {
+  background-image: url("travel.jpg");
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  text-align: start;
+  font-size: xxx-large;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+}
+
+.text {
+  margin-left: 1.5rem;
+}
+
+.vr {
+  height: 20rem;
+  width: 0.25rem;
+  background-color: white;
+  display: flex;
+  justify-self: flex-start;
+  margin-bottom: 2rem;
+  border-radius: 0.15rem;
+}
+
+.si img {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 1rem;
+  justify-items: start;
+  margin-right: 4rem;
+}
+
+.text1 {
+  margin-top: 2rem;
+  font-size: large;
+  font-weight: lighter;
+}
+
+.main button {
+  background: rgb(14, 179, 151);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 4rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#results {
+  margin-top: 2rem;
+}
+
+.result-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.team {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.team h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  align-self: flex-start; /* Aligns the title to the left */
+}
+
+.team-member {
+  background-color: rgba(128, 128, 128, 0.8); /* Gray with 0.8 opacity */
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: right;
+  max-width: 200px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Search results container */
+#search-results {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000; /* Ensures it's above other elements */
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Individual search result item */
+.search-result-item {
+  margin-bottom: 15px;
+}
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+.search-result-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.search-result-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.search-result-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+.local-time {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+.contact-form {
+  background-color: gray;
+  opacity: 0.8;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin: 8px 0 4px;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  align-self: flex-start;
+  font-size: 14px;
+}
+
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 100%;
+  }
+}
